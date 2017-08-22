@@ -1,0 +1,69 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This page provides an **interactive** documentation for XAP Manager RESTful API. In addition to the typical information provided for each operation (parameters, responses, etc.), you can experiment with it by setting parameters and clicking the `Try it out!` button. The operation will be invoked, and you'll see the response code and body, as well as the `curl` command and request URL which were used to invoke the command.\n\nFurthermore, since this API was created using [Swagger](http://swagger.io), you can also download its [specification](xap-manager-api.yaml) and use Swagger's [Online Editor](http://editor.swagger.io) to generate a client in your favorite language.\n",
+    "version" : "1.0",
+    "title" : "XAP Manager RESTful API",
+    "contact" : {
+      "name" : "GigaSpaces",
+      "url" : "http://docs.gigaspaces.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "basePath" : "/v1",
+  "schemes" : [ "http", "https" ],
+  "security" : [ {
+    "BasicSecurity" : [ ]
+  } ],
+  "paths" : {
+    "/controller/echo" : {
+      "post" : {
+        "tags" : [ "Test Controller" ],
+        "summary" : "Send Post Request with body and get echo for it",
+        "description" : "Controller test echo\n",
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "echoBody",
+          "description" : "echoBody",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "echoBody"
+          }
+        },
+        "security" : [ {
+          "BasicSecurity" : [ ]
+        } ]
+      }
+    },
+    "/controller/testGet" : {
+      "get" : {
+        "tags" : [ "Test Controller" ],
+        "summary" : "test get request",
+        "description" : "test get controller and get sucess\n",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "get Response"
+          }
+        },
+        "security" : [ {
+          "BasicSecurity" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "BasicSecurity" : {
+      "type" : "basic"
+    }
+  }
+}
